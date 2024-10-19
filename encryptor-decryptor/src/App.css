@@ -1,0 +1,131 @@
+/* App.css */
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;  /* Dark background */
+  color: #e0e0e0;  /* Light text color for contrast */
+}
+
+/* Main App Container */
+.App {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #1e1e1e;  /* Darker container */
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add subtle hover effect on container */
+.App:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Headings */
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ffab00;  /* Shiny gold color */
+}
+
+h2 {
+  font-size: 22px;
+  margin-top: 20px;
+  text-align: center;
+  color: #f0f0f0;
+}
+
+/* Textarea Styles */
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  resize: none;
+  font-size: 16px;
+  margin-bottom: 15px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  background-color: #2a2a2a; /* Dark background for textarea */
+  color: #e0e0e0; /* Light text color */
+}
+
+textarea:focus {
+  border-color: #ffab00; /* Shiny gold color on focus */
+  background-color: #333; /* Slightly lighter on focus */
+  outline: none;
+}
+
+/* Select Dropdown */
+select {
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  width: 100%;
+  font-size: 16px;
+  background-color: #2a2a2a; /* Dark background */
+  color: #e0e0e0; /* Light text color */
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+select:focus {
+  border-color: #ffab00; /* Shiny gold color on focus */
+  background-color: #333; /* Slightly lighter on focus */
+}
+
+/* Button Styles */
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffab00; /* Shiny gold */
+  color: #121212; /* Dark text for contrast */
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(255, 171, 0, 0.4);
+}
+
+button:hover {
+  background-color: #e09e00; /* Slightly darker on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 171, 0, 0.6);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Result Styles */
+p {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+  background-color: #2a2a2a; /* Dark background for result */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fade 1.5s infinite alternate; /* Simplified fade effect */
+}
+
+/* Fade Animation */
+@keyframes fade {
+  0% {
+      opacity: 0.8;
+  }
+  100% {
+      opacity: 1;
+  }
+}
