@@ -46,7 +46,7 @@ function App() {
                     <option value="decrypt">Decrypt</option>
                 </select>
                 <br />
-                <button type="submit">Submit</button>
+                <button type="submit">Output</button>
             </form>
             <h2>Result:</h2>
             <p>{result}</p>
