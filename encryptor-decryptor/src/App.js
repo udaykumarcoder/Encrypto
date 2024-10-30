@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import './App.css';
 
 function App() {
@@ -7,15 +6,27 @@ function App() {
     const [result, setResult] = useState('');
     const [operation, setOperation] = useState('encrypt');
 
-    const handleSubmit = async (e) => {
+    // Encryption function using Caesar cipher with a default shift
+    const encrypt = (text, shift = 3) => {
+        return text.split('').map(char => {
+            if (/[a-zA-Z]/.test(char)) {
+                const shiftBase = char === char.toUpperCase() ? 65 : 97;
+                return String.fromCharCode((char.charCodeAt(0) - shiftBase + shift) % 26 + shiftBase);
+            }
+            return char;
+        }).join('');
+    };
+
+    // Decryption function by reversing the shift
+    const decrypt = (text, shift = 3) => {
+        return encrypt(text, -shift);
+    };
+
+    // Handle form submission and perform encryption or decryption
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const endpoint = operation === 'encrypt' ? 'http://localhost:5000/api/encrypt' : 'http://localhost:5000/api/decrypt';
-        try {
-            const response = await axios.post(endpoint, { text });
-            setResult(response.data.encrypted_text || response.data.decrypted_text);
-        } catch (error) {
-            console.error('Error:', error.response ? error.response.data : error.message);
-        }
+        const resultText = operation === 'encrypt' ? encrypt(text) : decrypt(text);
+        setResult(resultText);  // Display result based on selected operation
     };
 
     return (
